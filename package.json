@@ -3,6 +3,7 @@
   "version": "0.9.3",
   "description": "Thrift binaries for use compiling thrift on platforms with no thrift installed.",
   "bin": "bin/bin",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

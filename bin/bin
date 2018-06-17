@@ -1,19 +1,5 @@
 #!/usr/bin/env node
 
-const
-    { spawn } = require( 'child_process')
-    os = require('os'),
-    fs = require('fs');
+const thriftBin = require('../index');
 
-let platform = os.platform();
-let THRIFT_BIN = `./thrift_${platform}`;
-
-fs.access(THRIFT_BIN, fs.constants.F_OK, (err) => {
-    if(!err) {
-        spawn(THRIFT_BIN,
-             process.argv.slice(2),
-             {stdio: [process.stdin, process.stdout, process.stderr]});
-    } else {
-        console.log('Thrift Binary does not support your platform yet!');
-    }
-});
+thriftBin.spawn(process.argv.slice(2));
